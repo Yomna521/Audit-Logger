@@ -3,11 +3,10 @@
     Authentication: Basic HTTP Authorization
 """
 import json
-from http.server import BaseHTTPRequestHandler, HTTPServer
+from http.server import BaseHTTPRequestHandler
 
 from service import logger
-from database import audit_logs_db
-from database import user
+from database import audit_logs_db, user
 
 
 class Handler(BaseHTTPRequestHandler):
@@ -129,8 +128,4 @@ def get_content(path: str) -> 'str':
                   for a, b in (element.split('=')
                                for element in path.split('&')))
     return result
-
-
-with HTTPServer(('', 8000), Handler) as server:
-    server.serve_forever()
 
