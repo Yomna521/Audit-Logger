@@ -19,7 +19,7 @@ collection = database["audit_logs"]
 
 # save a log to collection
 def save_log(log: json, db=collection):
-    record = db.insert_one(log)
+    db.insert_one(log)
     return
 
 
