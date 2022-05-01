@@ -89,7 +89,7 @@ class Handler(BaseHTTPRequestHandler):
         elif self.headers.get('Authorization') == 'Basic ' + str(user.user_key()):
             # extract the event to be logged
             length = int(self.headers.get('Content-Length'))
-            event = get_content(self.rfile.read(length).decode('utf-8'))
+            event = self.rfile.read(length).decode('utf-8')
             try:
                 # create a an AuditLogger instance
                 msg_logger = logger.AuditLogger()
@@ -110,11 +110,11 @@ class Handler(BaseHTTPRequestHandler):
             pass
         else:
             self.do_AUTHHEAD()
-            self.wfile.write(bytes(json.dumps('Invalid credentials'), 'utf-8'))
+            self.wfile.write(bytes("Invalid credentials".encode('utf-8'))
             pass
 
 
-def get_content(path: str) -> 'str':
+def get_content(path: str):
     """
     Get content sent in a request as a dictionary
     :param path:
