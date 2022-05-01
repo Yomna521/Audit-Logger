@@ -29,7 +29,7 @@ class Handler(BaseHTTPRequestHandler):
 
     def do_GET(self):
         # Check authorization in the request's header
-        # if authorization is sent to none -> send error response
+        # if authorization isn't set -> send error response
         if self.headers.get('Authorization') is None:
             self.do_AUTHHEAD()
             self.wfile.write('No Authentication Header Received'.encode('utf-8'))
@@ -64,7 +64,8 @@ class Handler(BaseHTTPRequestHandler):
                                      'QUERY RESULTS:',
                                      '{}'.format(results)]
                     message = '\r\n'.join(message_parts)
-
+                    
+                    # Query is successful
                     self.do_HEAD()
                     self.wfile.write(message.encode('utf-8'))
                 except:
@@ -79,7 +80,7 @@ class Handler(BaseHTTPRequestHandler):
 
     def do_POST(self):
         # Check authorization in the request's header
-        # if authorization is sent to none -> send error response
+        # if authorization isn't set -> send error response
         if self.headers.get('Authorization') is None:
             self.do_AUTHHEAD()
             self.wfile.write('No Authentication Header Received'.encode('utf-8'))
@@ -110,7 +111,7 @@ class Handler(BaseHTTPRequestHandler):
             pass
         else:
             self.do_AUTHHEAD()
-            self.wfile.write(bytes("Invalid credentials".encode('utf-8'))
+            self.wfile.write("Invalid credentials".encode('utf-8'))
             pass
 
 
