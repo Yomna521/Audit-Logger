@@ -1,4 +1,3 @@
-#./service/run.py
 #!/usr/bin/python
 
 from service import handler
