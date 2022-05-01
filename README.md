@@ -32,26 +32,30 @@ Clients can make HTTP requests to the system's API. The Handler handles these re
 To deploy the microservice, run the following command on terminal:<br>
 <b> sudo python3.8 <./run.py </b><br>
 Now, the server should be running on your local host using port 8000.<br>
-<img width="431" alt="1" src="https://user-images.githubusercontent.com/59218287/166134702-1e0e8dc7-520a-4fe7-a965-7b279dfd5c2a.png"><br>
+<img width="431" src="https://user-images.githubusercontent.com/59218287/166134702-1e0e8dc7-520a-4fe7-a965-7b279dfd5c2a.png"><br>
         
 ### Testing
-Open another terminal to act as the client side.<br>
+Open another terminal to act as the client side.<br><br>
 To test the POST requests, run the curl commands saved in post_requests.sh on terminal:<br>
-![image](https://user-images.githubusercontent.com/59218287/166139384-0116be14-3f14-4811-8ec1-36a97a2e856b.png) <br>
-The server side after excuting the commands:
-![image](https://user-images.githubusercontent.com/59218287/166139495-e058172b-67ba-48b9-a1fa-219891911c50.png) <br>
-        
+<img width="431" src="https://user-images.githubusercontent.com/59218287/166139384-0116be14-3f14-4811-8ec1-36a97a2e856b.png"><br><br>
+
+The server side after excuting the commands:<br>
+<img width="431" src="https://user-images.githubusercontent.com/59218287/166139495-e058172b-67ba-48b9-a1fa-219891911c50.png"><br><br>       
+
 To test the GET query requests, run the curl commands in get_requests.sh on terminal:<br>
-![image](https://user-images.githubusercontent.com/59218287/166139762-5dc80613-a5b4-4bb5-ba38-fa61f4e43794.png)<br>
-        
+<img width="431" src="https://user-images.githubusercontent.com/59218287/166139762-5dc80613-a5b4-4bb5-ba38-fa61f4e43794.png"><br>
+<img width="431" src="https://user-images.githubusercontent.com/59218287/166139892-04d46f66-267a-4314-ad22-ae7c93e6a676.png"><br><br>         
+
 To test the authentication:<br>
-![image](https://user-images.githubusercontent.com/59218287/166136702-e664819f-00ab-4604-a16a-d5ce3cea339e.png)<br>
-![image](https://user-images.githubusercontent.com/59218287/166139892-04d46f66-267a-4314-ad22-ae7c93e6a676.png)<br>     
+<img width="431" src="https://user-images.githubusercontent.com/59218287/166136702-e664819f-00ab-4604-a16a-d5ce3cea339e.png"><br>
+  
         
 ### Database
 As the service is write-intensive, and the events are open-ended. NoSQL offers the best solution to save the logs.<br>  
 The object view in MongoDB:<br>
-![image](https://user-images.githubusercontent.com/59218287/166140012-a9f3c839-6804-4e45-97c4-6e3552fc8398.png)
+<img width="431" src="https://user-images.githubusercontent.com/59218287/166140012-a9f3c839-6804-4e45-97c4-6e3552fc8398.png"><br>   
+
+
 
 ### Enviroment
 - Ubuntu 18.04.06 (VMware Workstation 16)
