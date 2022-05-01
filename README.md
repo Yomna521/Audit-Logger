@@ -54,8 +54,7 @@ To test the authentication:<br>
 As the service is write-intensive, and the events are open-ended. NoSQL offers the best solution to save the logs.<br>  
 The object view in MongoDB:<br>
 <img width="431" src="https://user-images.githubusercontent.com/59218287/166140012-a9f3c839-6804-4e45-97c4-6e3552fc8398.png"><br>   
-
-
+<img width="431" src="https://user-images.githubusercontent.com/59218287/166156608-19b6254b-3da1-4101-9ca5-a915c28c233c.png"><br>
 
 ### Enviroment
 - Ubuntu 18.04.06 (VMware Workstation 16)
