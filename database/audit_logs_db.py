@@ -4,7 +4,6 @@
 import json
 
 from pymongo import MongoClient
-from service import logger
 
 
 # Credentials
@@ -21,13 +20,16 @@ collection = database["audit_logs"]
 # save a log to collection
 def save_log(log: json, db=collection):
     record = db.insert_one(log)
-    print(record)
     return
 
 
-# find all matches of the query in the collection
+# Assuming the client systems only have access to query over events
 def findAll(query: dict, db=collection) -> list:
+    # 'event.' is appended before the keys in the query dict to enable mongodb to query events (nested dictionaries)
+    e = 'event.'
+    corrected_query = {e+k : v for k, v in query.items()}
+    # append results into a list
     results = []
-    for result in db.find(query):
+    for result in db.find(corrected_query):
         results.append(result)
     return results
