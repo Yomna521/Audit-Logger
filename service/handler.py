@@ -93,7 +93,7 @@ class Handler(BaseHTTPRequestHandler):
             try:
                 # create a an AuditLogger instance
                 msg_logger = logger.AuditLogger()
-                msg_logger.set_event(event)
+                msg_logger.set_event(json.loads(event))
                 msg_logger.set_http_request(self.command, self.client_address)
                 # save log to database
                 audit_logs_db.save_log(vars(msg_logger))
