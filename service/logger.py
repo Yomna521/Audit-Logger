@@ -28,6 +28,6 @@ class AuditLogger:
         }
         return self
 
-    def set_event(self, event: dict) -> 'AuditLogger':
+    def set_event(self, event: json) -> 'AuditLogger':
         self.event = event
         return self
