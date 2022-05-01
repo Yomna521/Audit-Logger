@@ -29,20 +29,3 @@ def findAll(query: dict, db=collection) -> list:
     for result in db.find(query):
         results.append(result)
     return results
-
-
-# DEBUGGING
-if __name__ == "__main__":
-    event6 = {
-        'level': 'DEBUG',
-        'user_ip': '1.2.3.4',
-        'user_name': 'Jane Doe',
-        'event_type': 'deactivation',
-        'outcome': 'successful'
-    }
-    msg_logger = logger.AuditLogger()
-    msg_logger.set_event(event6)
-    msg_logger.set_http_request("POST", ('', 8080))
-
-    #collection.insert_one(vars(msg_logger))
-    print(findAll({'user_ip':'1.2.3.4'}))
